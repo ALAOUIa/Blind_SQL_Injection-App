@@ -31,18 +31,18 @@ Follow these steps to set up and run the application:
 1. Clone the Repository
 If you haven't already, clone the repository from GitHub:
 
-git clone https://github.com/your-username/repository-name.git
-cd repository-name
+git clone https://github.com/ALAOUIa/Blind_SQL_Injection-App.git
+cd Abdelaziz_Blind-SQL-Injection-Dockerized
 
 2. Load the Docker Image
 Load the prebuilt Docker image from the .tar file:
 
-docker load < mon_image.tar
+docker load -i Abdelaziz_Blind-SQL-Injection-Dockerized.tar
 
 3. Run the Docker Container
 Start the container with the following command:
 
-docker run -p 8080:80 container-name
+docker run -p 8080:80 Abdelaziz_Hacker
 
 
 4. Access the Application
