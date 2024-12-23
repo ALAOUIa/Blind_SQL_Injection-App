@@ -90,15 +90,15 @@ User ID exists in the database.
 
 ##### 2. Validating the Query with Always-True Condition
 
-#####Query:
+##### Query:
 ```
 1' AND '1'='1' -- 
 ```
 
-#####Explanation:
+##### Explanation:
 This query tests whether a condition that is always true (`'1'='1'`) correctly processes and confirms the result.
 
-#####Expected Result:
+##### Expected Result:
 ```
 User ID exists in the database.
 ```
