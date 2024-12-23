@@ -48,7 +48,7 @@ docker load -i Abdelaziz_Blind-SQL-Injection-Dockerized.tar
 
 Start the container with the following command:
 ```bash
-docker run -p 8080:80 Abdelaziz_Hacker
+docker run -p 8080:80 abdelaziz/dvwa-custom
 ```
 
 #### 4. Access the Application
