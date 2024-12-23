@@ -34,6 +34,9 @@ Follow these steps to set up and run the application:
 If you haven't already, clone the repository from GitHub:
 ```bash
 git clone https://github.com/ALAOUIa/Blind_SQL_Injection-App.git
+```
+
+```bash
 cd Abdelaziz_Blind-SQL-Injection-Dockerized
 ```
 
