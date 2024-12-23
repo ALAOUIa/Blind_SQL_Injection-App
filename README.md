@@ -115,11 +115,3 @@ Extract database structure or content:
 ### Disclaimer
 
 This project is intended **solely for educational purposes**. Do not attempt these attacks on live systems or without explicit authorization. Misuse of this knowledge is unethical and may be illegal.
-
----
-
-### Contact
-
-For questions or contributions, feel free to reach out:
-- **Name**: Abdelaziz Elalaoui  
-- **Email**: abdelaziz.elalaoui@esi.ac.ma
