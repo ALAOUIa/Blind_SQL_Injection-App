@@ -30,24 +30,25 @@ Follow these steps to set up and run the application:
 
 1. Clone the Repository
 If you haven't already, clone the repository from GitHub:
+
 ```sql
 git clone https://github.com/ALAOUIa/Blind_SQL_Injection-App.git
 cd Abdelaziz_Blind-SQL-Injection-Dockerized
 
 2. Load the Docker Image
 Load the prebuilt Docker image from the .tar file:
-```sql
+
 docker load -i Abdelaziz_Blind-SQL-Injection-Dockerized.tar
 
 3. Run the Docker Container
 Start the container with the following command:
-```sql
+
 docker run -p 8080:80 Abdelaziz_Hacker
 
 
 4. Access the Application
 Open your browser and navigate to:
-```sql
+
 http://localhost:8080
 
 5. Test SQL Injection Attacks
@@ -60,6 +61,6 @@ Here are some sample payloads to test on the vulnerable application:
 
 ### 1. **Boolean-Based Blind SQL Injection**
 This method evaluates responses based on a condition:
-```sql
+
 ' OR 1=1 --   # True condition, bypasses authentication
 ' OR 1=2 --   # False condition, does not bypass
