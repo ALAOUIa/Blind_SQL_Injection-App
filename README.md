@@ -73,7 +73,7 @@ Here are some sample payloads to test on the vulnerable application:
 
 ##### 1. Bypass Authentication Using Always-True Condition
 
-### Query:
+##### Query:
 ```
 1' OR '1'='1' -- 
 ```
