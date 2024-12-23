@@ -34,6 +34,7 @@ If you haven't already, clone the repository from GitHub:
 ```sql
 git clone https://github.com/ALAOUIa/Blind_SQL_Injection-App.git
 cd Abdelaziz_Blind-SQL-Injection-Dockerized
+```sql
 
 2. Load the Docker Image
 Load the prebuilt Docker image from the .tar file:
