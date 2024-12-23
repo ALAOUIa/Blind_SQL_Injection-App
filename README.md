@@ -187,12 +187,6 @@ This query introduces a delay (`SLEEP(3)`) when the condition (`1=1`) is true, m
 - The response is delayed by 3 seconds if the condition is true.
 - No delay occurs if the condition is false.
 
----
-
-##### Additional Notes
-- **Comment Style**: Use `--` followed by a space or `#` to terminate the query properly.
-- **Security Level**: Ensure that the DVWA security level is set to **Low** for these queries to work as expected.
-- **Testing Responsibly**: Only test on applications you own or have explicit permission to test.
 
 ---
 
