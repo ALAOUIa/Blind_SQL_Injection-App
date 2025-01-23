@@ -44,7 +44,7 @@ cd Abdelaziz_Blind-SQL-Injection-Dockerized
 
 Load the prebuilt Docker image from the `.tar` file:
 ```bash
-docker load -i Abdelaziz_Blind-SQL-Injection-Dockerized.tar
+docker load -i Abdelaziz_Blind-SQL-Injection.tar
 ```
 
 #### 3. Run the Docker Container
